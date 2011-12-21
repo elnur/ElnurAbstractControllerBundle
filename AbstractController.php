@@ -63,7 +63,7 @@ abstract class AbstractController
     /**
      * @return \Symfony\Component\Security\Core\User\UserInterface
      */
-    public function getCurrentUser()
+    protected function getCurrentUser()
     {
         return $this->securityContext->getToken()->getUser();
     }

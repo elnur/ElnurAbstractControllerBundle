@@ -37,7 +37,13 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
             ->withNoArgs()
             ->andReturn($user);
 
-        $result = $this->controller->getCurrentUser();
+        $method = new \ReflectionMethod(
+            'Elnur\AbstractControllerBundle\AbstractController',
+            'getCurrentUser'
+        );
+        $method->setAccessible(true);
+
+        $result = $method->invoke($this->controller);
         $this->assertEquals($user, $result);
     }
 }
