@@ -22,6 +22,9 @@
             <call method="setSecurityContext">
                  <argument type="service" id="security.context"/>
             </call>
+            <call method="setTemplating">
+                 <argument type="service" id="templating"/>
+            </call>
         </service>
     </services>
 </container>

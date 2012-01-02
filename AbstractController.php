@@ -4,7 +4,8 @@ namespace Elnur\AbstractControllerBundle;
 use Symfony\Component\Form\FormFactory,
     Symfony\Bundle\FrameworkBundle\Routing\Router,
     Symfony\Bundle\FrameworkBundle\Translation\Translator,
-    Symfony\Component\Security\Core\SecurityContextInterface;
+    Symfony\Component\Security\Core\SecurityContextInterface,
+    Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 abstract class AbstractController
 {
@@ -27,6 +28,11 @@ abstract class AbstractController
      * @var \Symfony\Component\Security\Core\SecurityContextInterface
      */
     protected $securityContext;
+
+    /**
+     * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
+     */
+    protected $templating;
 
     /**
      * @param \Symfony\Component\Form\FormFactory $formFactory
@@ -58,6 +64,14 @@ abstract class AbstractController
     public function setSecurityContext(SecurityContextInterface $securityContext)
     {
         $this->securityContext = $securityContext;
+    }
+
+    /**
+     * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
+     */
+    public function setTemplating(EngineInterface $templating)
+    {
+        $this->templating = $templating;
     }
 
     /**
