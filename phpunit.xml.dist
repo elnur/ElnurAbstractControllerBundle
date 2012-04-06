@@ -14,7 +14,7 @@
 >
 
     <testsuites>
-        <testsuite name="ElnurControllerBundle Test Suite">
+        <testsuite name="ElnurAbstractControllerBundle Test Suite">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
