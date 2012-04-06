@@ -3,7 +3,7 @@ namespace Elnur\AbstractControllerBundle;
 
 use Symfony\Component\Form\FormFactory,
     Symfony\Bundle\FrameworkBundle\Routing\Router,
-    Symfony\Bundle\FrameworkBundle\Translation\Translator,
+    Symfony\Component\Translation\TranslatorInterface,
     Symfony\Component\Security\Core\SecurityContextInterface,
     Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
@@ -51,9 +51,9 @@ abstract class AbstractController
     }
 
     /**
-     * @param \Symfony\Bundle\FrameworkBundle\Translation\Translator $translator
+     * @param \Symfony\Component\Translation\TranslatorInterface $translator
      */
-    public function setTranslator(Translator $translator)
+    public function setTranslator(TranslatorInterface $translator)
     {
         $this->translator = $translator;
     }
