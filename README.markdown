@@ -5,6 +5,18 @@ So, you decided to [define your controllers as services][services]? That's
 great! But isn't injecting the same basic services into each controllers tedious
 and boring? Not anymore!
 
+The abstract controller of this bundle is automatically injected with the
+following commonly used services:
+
+  * `form.factory`,
+  * `router`,
+  * `translator`,
+  * `security.context`, and
+  * `templating`.
+
+It also provides a handy `getCurrentUser()` method to get the currently logged
+in user.
+
 Installation
 ------------
 
