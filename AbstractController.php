@@ -22,10 +22,10 @@
  */
 namespace Elnur\AbstractControllerBundle;
 
-use Symfony\Component\Form\FormFactory;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
-use Symfony\Bundle\FrameworkBundle\Routing\Router;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 abstract class AbstractController
@@ -56,17 +56,17 @@ abstract class AbstractController
     protected $templating;
 
     /**
-     * @param \Symfony\Component\Form\FormFactory $formFactory
+     * @param \Symfony\Component\Form\FormFactoryInterface $formFactory
      */
-    public function setFormFactory(FormFactory $formFactory)
+    public function setFormFactory(FormFactoryInterface $formFactory)
     {
         $this->formFactory = $formFactory;
     }
 
     /**
-     * @param \Symfony\Bundle\FrameworkBundle\Routing\Router $router
+     * @param \Symfony\Component\Routing\RouterInterface $router
      */
-    public function setRouter(Router $router)
+    public function setRouter(RouterInterface $router)
     {
         $this->router = $router;
     }
