@@ -22,11 +22,11 @@
  */
 namespace Elnur\AbstractControllerBundle;
 
-use Symfony\Component\Form\FormFactory,
-    Symfony\Bundle\FrameworkBundle\Routing\Router,
-    Symfony\Component\Translation\TranslatorInterface,
-    Symfony\Component\Security\Core\SecurityContextInterface,
-    Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Symfony\Component\Form\FormFactory;
+use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 abstract class AbstractController
 {
