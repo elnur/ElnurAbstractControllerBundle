@@ -38,7 +38,7 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
         $this->controller = m::mock('Elnur\AbstractControllerBundle\AbstractController[]');
     }
 
-    public function testGetCurrentUser()
+    public function testGetUser()
     {
         $securityContext = m::mock('Symfony\Component\Security\Core\SecurityContextInterface');
         $token = m::mock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
@@ -60,7 +60,7 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
 
         $method = new \ReflectionMethod(
             'Elnur\AbstractControllerBundle\AbstractController',
-            'getCurrentUser'
+            'getUser'
         );
         $method->setAccessible(true);
 

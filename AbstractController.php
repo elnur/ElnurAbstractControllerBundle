@@ -97,8 +97,19 @@ abstract class AbstractController
 
     /**
      * @return \Symfony\Component\Security\Core\User\UserInterface
+     *
+     * @deprecated Use
+     *             {@link getUser()} instead.
      */
     protected function getCurrentUser()
+    {
+        return $this->getUser();
+    }
+
+    /**
+     * @return \Symfony\Component\Security\Core\User\UserInterface
+     */
+    protected function getUser()
     {
         return $this->securityContext->getToken()->getUser();
     }

@@ -14,8 +14,7 @@ following commonly used services:
   * `security.context`, and
   * `templating`.
 
-It also provides a handy `getCurrentUser()` method to get the currently logged
-in user.
+It also provides a handy `getUser()` method to get the currently logged in user.
 
 Installation
 ------------
