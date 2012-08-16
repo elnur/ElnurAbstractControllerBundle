@@ -23,22 +23,19 @@ It also provides a couple of helper methods:
 Installation
 ------------
 
-1.  Add this to the `deps` file:
+1.  Add this to `composer.json`:
 
-        [ElnurAbstractControllerBundle]
-            git=http://github.com/elnur/ElnurAbstractControllerBundle.git
-            target=/bundles/Elnur/AbstractControllerBundle
+        {
+            "require": {
+                "elnur/abstract-controller-bundle": "dev-master"
+            }
+        }
 
-    And run `bin/vendors install`.
+    And run:
 
-2.  Register the `Elnur` namespace in the `app/autoload.php` file:
+        composer update elnur/abstract-controller-bundle
 
-        $loader->registerNamespaces(array(
-            // ...
-            'Elnur'            => __DIR__.'/../vendor/bundles',
-        ));
-
-3.  Register the bundle in the `app/AppKernel.php` file:
+2.  Enable the bundle in `app/AppKernel.php`:
 
         public function registerBundles()
         {
