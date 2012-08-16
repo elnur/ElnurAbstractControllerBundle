@@ -23,7 +23,7 @@
 namespace Elnur\ControllerBundle\Tests;
 
 use ReflectionMethod;
-use \Mockery as m;
+use Mockery as m;
 
 class ControllerTest extends \PHPUnit_Framework_TestCase
 {
@@ -45,8 +45,8 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
     public function testGetUser()
     {
         $securityContext = m::mock('Symfony\Component\Security\Core\SecurityContextInterface');
-        $token = m::mock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
-        $user = m::mock('Symfony\Component\Security\Core\User\UserInterface');
+        $token           = m::mock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
+        $user            = m::mock('Symfony\Component\Security\Core\User\UserInterface');
 
         $this->controller->setSecurityContext($securityContext);
 
@@ -54,15 +54,17 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
             ->shouldReceive('getToken')
             ->once()
             ->withNoArgs()
-            ->andReturn($token);
+            ->andReturn($token)
+        ;
 
         $token
             ->shouldReceive('getUser')
             ->once()
             ->withNoArgs()
-            ->andReturn($user);
+            ->andReturn($user)
+        ;
 
-        $method = new \ReflectionMethod(
+        $method = new ReflectionMethod(
             'Elnur\AbstractControllerBundle\AbstractController',
             'getUser'
         );
