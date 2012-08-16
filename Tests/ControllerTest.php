@@ -22,6 +22,7 @@
  */
 namespace Elnur\ControllerBundle\Tests;
 
+use ReflectionMethod;
 use \Mockery as m;
 
 class ControllerTest extends \PHPUnit_Framework_TestCase
@@ -69,5 +70,37 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
 
         $result = $method->invoke($this->controller);
         $this->assertEquals($user, $result);
+    }
+
+    public function testAddFlash()
+    {
+        $session  = m::mock('Symfony\Component\HttpFoundation\Session\SessionInterface');
+        $flashBag = m::mock('Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface');
+
+        $type    = 'type';
+        $message = 'message';
+
+        $this->controller->setSession($session);
+
+        $session
+            ->shouldReceive('getFlashBag')
+            ->once()
+            ->withNoArgs()
+            ->andReturn($flashBag)
+        ;
+
+        $flashBag
+            ->shouldReceive('add')
+            ->once()
+            ->with($type, $message)
+        ;
+
+        $method = new ReflectionMethod(
+            'Elnur\AbstractControllerBundle\AbstractController',
+            'addFlash'
+        );
+        $method->setAccessible(true);
+
+        $method->invoke($this->controller, $type, $message);
     }
 }

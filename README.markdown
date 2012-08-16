@@ -11,10 +11,14 @@ following commonly used services:
   * `form.factory`,
   * `router`,
   * `translator`,
-  * `security.context`, and
+  * `security.context`,
+  * `session`, and
   * `templating`.
 
-It also provides a handy `getUser()` method to get the currently logged in user.
+It also provides a couple of helper methods:
+
+  * `getUser()` — to get the currently logged in user;
+  * `addFlash($type, $message)` — to add a flash message to the session.
 
 Installation
 ------------

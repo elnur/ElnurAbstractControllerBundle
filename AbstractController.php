@@ -26,6 +26,7 @@ use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 abstract class AbstractController
@@ -54,6 +55,11 @@ abstract class AbstractController
      * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
      */
     protected $templating;
+
+    /**
+     * @var \Symfony\Component\HttpFoundation\Session\SessionInterface
+     */
+    protected $session;
 
     /**
      * @param \Symfony\Component\Form\FormFactoryInterface $formFactory
@@ -96,6 +102,14 @@ abstract class AbstractController
     }
 
     /**
+     * @param \Symfony\Component\HttpFoundation\Session\SessionInterface $session
+     */
+    public function setSession(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+
+    /**
      * @return \Symfony\Component\Security\Core\User\UserInterface
      *
      * @deprecated Use
@@ -112,5 +126,14 @@ abstract class AbstractController
     protected function getUser()
     {
         return $this->securityContext->getToken()->getUser();
+    }
+
+    /**
+     * @param string $type
+     * @param string $message
+     */
+    protected function addFlash($type, $message)
+    {
+        $this->session->getFlashBag()->add($type, $message);
     }
 }

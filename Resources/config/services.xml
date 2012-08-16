@@ -46,6 +46,9 @@ THE SOFTWARE.
             <call method="setTemplating">
                  <argument type="service" id="templating"/>
             </call>
+            <call method="setSession">
+                <argument type="service" id="session"/>
+            </call>
         </service>
     </services>
 </container>
