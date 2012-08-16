@@ -26,6 +26,9 @@ use \Mockery as m;
 
 class ControllerTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \Elnur\AbstractControllerBundle\AbstractController
+     */
     private $controller;
 
     protected function tearDown()
