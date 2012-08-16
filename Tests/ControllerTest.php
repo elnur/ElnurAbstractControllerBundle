@@ -22,10 +22,6 @@
  */
 namespace Elnur\ControllerBundle\Tests;
 
-require_once 'Mockery/Loader.php';
-$loader = new \Mockery\Loader;
-$loader->register();
-
 use \Mockery as m;
 
 class ControllerTest extends \PHPUnit_Framework_TestCase
