@@ -32,17 +32,17 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 abstract class AbstractController
 {
     /**
-     * @var \Symfony\Component\Form\FormFactory
+     * @var \Symfony\Component\Form\FormFactoryInterface
      */
     protected $formFactory;
 
     /**
-     * @var \Symfony\Bundle\FrameworkBundle\Routing\Router
+     * @var Symfony\Component\Routing\RouterInterface
      */
     protected $router;
 
     /**
-     * @var \Symfony\Bundle\FrameworkBundle\Translation\Translator
+     * @var \Symfony\Component\Translation\TranslatorInterface
      */
     protected $translator;
 
