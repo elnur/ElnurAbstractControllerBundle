@@ -26,7 +26,7 @@ THE SOFTWARE.
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="elnur.controller.abstract.class">Elnur\ControllerBundle\AbstractController</parameter>
+        <parameter key="elnur.controller.abstract.class">Elnur\AbstractControllerBundle\AbstractController</parameter>
     </parameters>
 
     <services>
