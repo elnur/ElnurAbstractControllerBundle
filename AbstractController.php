@@ -37,7 +37,7 @@ abstract class AbstractController
     protected $formFactory;
 
     /**
-     * @var Symfony\Component\Routing\RouterInterface
+     * @var \Symfony\Component\Routing\RouterInterface
      */
     protected $router;
 
