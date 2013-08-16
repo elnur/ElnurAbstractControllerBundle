@@ -24,11 +24,12 @@ namespace Elnur\ControllerBundle\Tests;
 
 use ReflectionMethod;
 use Mockery as m;
+use Elnur\AbstractControllerBundle\AbstractController;
 
 class ControllerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Elnur\AbstractControllerBundle\AbstractController
+     * @var AbstractController
      */
     private $controller;
 

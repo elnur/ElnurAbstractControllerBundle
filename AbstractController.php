@@ -25,6 +25,7 @@ namespace Elnur\AbstractControllerBundle;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
@@ -32,37 +33,37 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 abstract class AbstractController
 {
     /**
-     * @var \Symfony\Component\Form\FormFactoryInterface
+     * @var FormFactoryInterface
      */
     protected $formFactory;
 
     /**
-     * @var \Symfony\Component\Routing\RouterInterface
+     * @var RouterInterface
      */
     protected $router;
 
     /**
-     * @var \Symfony\Component\Translation\TranslatorInterface
+     * @var TranslatorInterface
      */
     protected $translator;
 
     /**
-     * @var \Symfony\Component\Security\Core\SecurityContextInterface
+     * @var SecurityContextInterface
      */
     protected $securityContext;
 
     /**
-     * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
+     * @var EngineInterface
      */
     protected $templating;
 
     /**
-     * @var \Symfony\Component\HttpFoundation\Session\SessionInterface
+     * @var SessionInterface
      */
     protected $session;
 
     /**
-     * @param \Symfony\Component\Form\FormFactoryInterface $formFactory
+     * @param FormFactoryInterface $formFactory
      */
     public function setFormFactory(FormFactoryInterface $formFactory)
     {
@@ -70,7 +71,7 @@ abstract class AbstractController
     }
 
     /**
-     * @param \Symfony\Component\Routing\RouterInterface $router
+     * @param RouterInterface $router
      */
     public function setRouter(RouterInterface $router)
     {
@@ -78,7 +79,7 @@ abstract class AbstractController
     }
 
     /**
-     * @param \Symfony\Component\Translation\TranslatorInterface $translator
+     * @param TranslatorInterface $translator
      */
     public function setTranslator(TranslatorInterface $translator)
     {
@@ -86,7 +87,7 @@ abstract class AbstractController
     }
 
     /**
-     * @param \Symfony\Component\Security\Core\SecurityContextInterface $securityContext
+     * @param SecurityContextInterface $securityContext
      */
     public function setSecurityContext(SecurityContextInterface $securityContext)
     {
@@ -94,7 +95,7 @@ abstract class AbstractController
     }
 
     /**
-     * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
+     * @param EngineInterface $templating
      */
     public function setTemplating(EngineInterface $templating)
     {
@@ -102,7 +103,7 @@ abstract class AbstractController
     }
 
     /**
-     * @param \Symfony\Component\HttpFoundation\Session\SessionInterface $session
+     * @param SessionInterface $session
      */
     public function setSession(SessionInterface $session)
     {
@@ -110,7 +111,7 @@ abstract class AbstractController
     }
 
     /**
-     * @return \Symfony\Component\Security\Core\User\UserInterface
+     * @return UserInterface
      *
      * @deprecated Use
      *             {@link getUser()} instead.
@@ -121,7 +122,7 @@ abstract class AbstractController
     }
 
     /**
-     * @return \Symfony\Component\Security\Core\User\UserInterface
+     * @return UserInterface
      */
     protected function getUser()
     {
